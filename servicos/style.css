@@ -1,0 +1,169 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #0033cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header.img{
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: space-between; /* Distribui os itens horizontalmente */
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Muda para flex para alinhar horizontalmente */
+    margin: 0;
+    margin-left: 15px;
+}
+
+header nav ul li {
+    margin: 0 5px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo img {
+    max-width: 100px;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.redes-sociais {
+    display: flex; /* Alinha ícones de redes sociais em linha */
+    margin-right: 40px;
+}
+
+.redes-sociais a img {
+    width: 40px;
+    margin: 0 5px;
+}
+
+/* Estilo para o catálogo */
+#catalogo {
+    padding: 40px;
+    text-align: center;
+}
+
+#catalogo h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o carrossel */
+.carousel-container {
+    position: relative;
+    width: 700px; /* Ajuste o tamanho conforme necessário */
+    max-width: 250px; /* Limite a largura máxima do carrossel */
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 10%;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center; /* Alinha as imagens no centro */
+    align-items: center; /* Centraliza verticalmente as imagens */
+    position: relative;
+    width: auto;
+    height: 300px; /* Altura ajustável do carrossel */
+    overflow: hidden;
+    border-radius: 10%;
+}
+
+.carousel img {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    object-fit: contain; /* As imagens mantêm suas proporções sem cortar */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 10%;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1; /* Garante que os botões fiquem acima das imagens */
+    border-radius: 10%;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo para o catálogo */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .galeria img {
+        width: 45%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria img {
+        width: 100%;
+        height: auto;
+    }
+}

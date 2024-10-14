@@ -3,11 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thiago Mascarin</title>
+    <link rel="stylesheet" href="/servicos/style.css">
 </head>
 <body>
-    // cabeçalho com informações tipo: contato e logo
-    
-    
+    <header>
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="logo">
+                <img src="/perfil.png" alt="Logo Piscineiro" class="logo">
+            </div>
+            <div class="redes-sociais">
+                <a href="#"><img src="/img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/img/instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Carrosséis -->
+    <section id="catalogo">
+        <h2>Catálogo de Piscinas Tratadas</h2>
+        
+        <!-- Carrossel 1 -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="/img/piscina (1).jpeg" alt="Piscina 1" class="active">
+                <img src="/img/piscina (2).jpeg" alt="Piscina 2">
+                <img src="/img/piscina (3).jpeg" alt="Piscina 3">
+                <img src="/img/piscina (4).jpeg" alt="Piscina 4">
+                <img src="/img/piscina (5).jpeg" alt="Piscina 5">
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+
+        <!-- Carrossel 2 -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="/img/piscina (6).jpeg" alt="Piscina 6" class="active">
+                <img src="/img/piscina (7).jpeg" alt="Piscina 7">
+                <img src="/img/piscina (8).jpeg" alt="Piscina 8">
+                <img src="/img/piscina (9).jpeg" alt="Piscina 9">
+                <img src="/img/piscina (10).jpeg" alt="Piscina 10">
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+
+        <!-- Adicione mais carrosséis conforme necessário -->
+    </section>
+
+    <script>
+        // Script para o funcionamento do carrossel
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach((carousel) => {
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+
+            // Função para mostrar a imagem atual
+            function showImage(index) {
+                images.forEach((img, idx) => {
+                    img.classList.remove('active');
+                    if (idx === index) {
+                        img.classList.add('active');
+                    }
+                });
+            }
+
+            // Adiciona evento de clique nos botões
+            carousel.parentNode.querySelector('.prev').addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            });
+
+            carousel.parentNode.querySelector('.next').addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
+        });
+    </script>
 </body>
 </html>
